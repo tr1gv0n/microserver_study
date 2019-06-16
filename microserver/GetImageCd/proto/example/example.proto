@@ -3,35 +3,41 @@ syntax = "proto3";
 package go.micro.srv.GetImageCd;
 
 service Example {
-	rpc Call(Request) returns (Response) {}
-	rpc Stream(StreamingRequest) returns (stream StreamingResponse) {}
-	rpc PingPong(stream Ping) returns (stream Pong) {}
+	rpc GetImageCd(Request) returns (Response) {}
+
 }
 
-message Message {
-	string say = 1;
-}
-
+//web->srv
 message Request {
-	string name = 1;
+	string uuid = 1;
 }
-
+//srv->web
 message Response {
-	string msg = 1;
+
+	string errno = 1;
+
+	string errmsg = 2;
+
+	//	图片
+	// Pix保管图像的像素色彩信息，顺序为R, G, B, A
+	//	Pix []uint8
+	//    // Stride是Pix中每行像素占用的字节数
+	//    Stride int
+	// Rect是图像的范围
+	//    Rect Rectangle
+	//	pix
+	repeated uint32  pix = 3 ;
+	//	Stride
+	int64 stride = 4 ;
+
+	//  point
+	message point {
+		int64 x  =1 ;
+		int64 y  =2 ;
+	}
+
+	point min = 5 ;
+	point max = 6 ;
+
 }
 
-message StreamingRequest {
-	int64 count = 1;
-}
-
-message StreamingResponse {
-	int64 count = 1;
-}
-
-message Ping {
-	int64 stroke = 1;
-}
-
-message Pong {
-	int64 stroke = 1;
-}

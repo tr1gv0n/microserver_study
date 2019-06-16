@@ -4,14 +4,15 @@ import (
 	"github.com/micro/go-grpc"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
-	"sss/GetImageCd/handler"
-	example "sss/GetImageCd/proto/example"
+	"sss/GetSmscd/handler"
+
+	example "sss/GetSmscd/proto/example"
 )
 
 func main() {
 	// New Service
 	service := grpc.NewService(
-		micro.Name("go.micro.srv.GetImageCd"),
+		micro.Name("go.micro.srv.GetSmscd"),
 		micro.Version("latest"),
 	)
 

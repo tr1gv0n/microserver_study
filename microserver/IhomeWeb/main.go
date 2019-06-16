@@ -33,8 +33,24 @@ func main() {
 	rou.NotFound = http.FileServer(http.Dir("html"))
 
 	rou.GET("/api/v1.0/areas",handler.GetArea)
+        //获取图片验证码服务/api/v1.0/imagecode/61bb9476-2a28-4180-9ce6-56a99e16003a
+    rou.GET("/api/v1.0/imagecode/:uuid", handler.GetImageCd)
 
-	service.Handle("/",rou)
+        // 短信验证码服务
+    rou.GET("/api/v1.0/smscode/:mobile", handler.GetSmscd)
+        // 注册
+    rou.POST("/api/v1.0/users", handler.PostRet)
+
+        //欺骗浏览器  session index
+    rou.GET("/api/v1.0/session", handler.GetSession)
+        //session
+    rou.GET("/api/v1.0/house/index", handler.GetIndex)
+
+    rou.POST("/api/v1.0/sessions", handler.PostLogin)
+
+	rou.DELETE("/api/v1.0/session",handler.DeleteSession)
+
+    service.Handle("/",rou)
 	// run service
         if err := service.Run(); err != nil {
                 log.Fatal(err)
