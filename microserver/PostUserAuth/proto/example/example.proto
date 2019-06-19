@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package go.micro.srv.PostUserAuth;
+
+service Example {
+	rpc PostUserAuth(Request) returns (Response) {}
+
+}
+
+
+
+message Request {
+	//	真实姓名
+	string realname = 1;
+	//	身份证号
+	string idcard = 2;
+	//	sessionid
+	string sessionid = 3;
+}
+
+message Response {
+	//	错误码
+	string errno = 1;
+
+	//	错误信息
+	string errmsg = 2;
+}
