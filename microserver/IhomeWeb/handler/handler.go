@@ -571,7 +571,7 @@ func GetUserInfo(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 	}
 }
 
-/*func PostAvatar(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
+func PostAvatar(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 	fmt.Println(" 上传头像  PostAvatar  /api/v1.0/user/avatar ")
 
 	//接受前段发送过来的二进制图片数据
@@ -663,7 +663,7 @@ func GetUserInfo(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 		return
 	}
 }
-*/
+
 /*func PutUserInfo(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 	fmt.Println("更新用户名   PutUserInfo   /api/v1.0/user/name")
 

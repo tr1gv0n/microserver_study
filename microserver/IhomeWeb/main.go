@@ -52,7 +52,7 @@ func main() {
     //获取用户信息 同 身份认证检查
     rou.GET("/api/v1.0/user", handler.GetUserInfo)
     //上传 头像
-    //rou.POST("/api/v1.0/user/avatar",handler.PostAvatar)
+    rou.POST("/api/v1.0/user/avatar",handler.PostAvatar)
 
     //更新用户名
     //rou.PUT("/api/v1.0/user/name", handler.PutUserInfo)
