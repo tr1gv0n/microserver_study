@@ -45,11 +45,23 @@ func main() {
     rou.GET("/api/v1.0/session", handler.GetSession)
         //session
     rou.GET("/api/v1.0/house/index", handler.GetIndex)
-
+    //登陆服务
     rou.POST("/api/v1.0/sessions", handler.PostLogin)
-
+    //退出登陆
 	rou.DELETE("/api/v1.0/session",handler.DeleteSession)
+    //获取用户信息 同 身份认证检查
+    rou.GET("/api/v1.0/user", handler.GetUserInfo)
+    //上传 头像
+    //rou.POST("/api/v1.0/user/avatar",handler.PostAvatar)
 
+    //更新用户名
+    //rou.PUT("/api/v1.0/user/name", handler.PutUserInfo)
+
+    //身份认证检查 同  获取用户信息   所调用的服务是 GetUserInfo
+    //rou.GET("/api/v1.0/user/auth", handler.GetUserAuth)
+
+    //实名认证服务
+    //rou.POST("/api/v1.0/user/auth",handler.PostUserAuth)
     service.Handle("/",rou)
 	// run service
         if err := service.Run(); err != nil {
