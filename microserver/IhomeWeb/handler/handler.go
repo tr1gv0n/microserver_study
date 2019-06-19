@@ -21,6 +21,9 @@ import (
 	"sss/IhomeWeb/utils"
 	POSTLOGIN "sss/PostLogin/proto/example"
 	POSTRET "sss/PostRet/proto/example"
+	POSTAVATAR "sss/PostAvatar/proto/example"
+	PUTUSERINFO "sss/PutUserInfo/proto/example"
+	//POSTUSERAUTH "sss/PostUserAuth/proto/example"
 	//example "github.com/micro/examples/template/srv/proto/example"
 )
 
@@ -664,7 +667,7 @@ func PostAvatar(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 	}
 }
 
-/*func PutUserInfo(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
+func PutUserInfo(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 	fmt.Println("更新用户名   PutUserInfo   /api/v1.0/user/name")
 
 	// decode the incoming request as json
@@ -745,7 +748,7 @@ func PostAvatar(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 		return
 	}
 }
-*/
+
 /*func GetUserAuth(w http.ResponseWriter, r *http.Request,ps httprouter.Params) {
 
 	fmt.Println("获取用户信息 GetUserAuth /api/v1.0/user/auth")

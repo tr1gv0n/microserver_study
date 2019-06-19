@@ -55,7 +55,7 @@ func main() {
     rou.POST("/api/v1.0/user/avatar",handler.PostAvatar)
 
     //更新用户名
-    //rou.PUT("/api/v1.0/user/name", handler.PutUserInfo)
+    rou.PUT("/api/v1.0/user/name", handler.PutUserInfo)
 
     //身份认证检查 同  获取用户信息   所调用的服务是 GetUserInfo
     //rou.GET("/api/v1.0/user/auth", handler.GetUserAuth)
